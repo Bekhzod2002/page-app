@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Screen from '../../../Images/Screen.png'
 import Group from '../../../Images/Group 1500.png' ;
 import Portrait from '../../../Images/Portrait.png';
@@ -11,15 +11,12 @@ import Ellipse2 from '../../../Images/Ellipse2.png';
 import {FaCheck} from 'react-icons/fa';
 import '../../../index.css';
 import SimpleSlider from "../Slider/Slider";
-import Button from 'react-bootstrap/Button';
-import Collapse from 'react-bootstrap/Collapse';
-import { ButtonGroup } from "react-bootstrap";
+
 const Home = () => {
-    const [open, setOpen] = useState(false);
     return (
         <section>
 
-            <div className="container">
+            
 
                 <div className="main_content">
 
@@ -151,7 +148,7 @@ const Home = () => {
                                 <p className="Nar_txt">
 
                                     Digitaliseringsarbetet pågår för 
-                                    fullt runtom i Sveriges kommuner 
+                                    fullt runtom i Sveriges <br/> kommuner 
                                     och myndigheter. Vad passar då bättre än.
                                     
                                 </p>
@@ -254,14 +251,9 @@ const Home = () => {
 
                     </div>
 
-                    <div className="footer_part">
-                        
-                    </div>
-
-
                 </div>
 
-            </div>
+            
 
 
         </section>

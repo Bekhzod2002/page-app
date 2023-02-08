@@ -1,0 +1,483 @@
+.modal{
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.modal.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal__content{
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    height: 1624px;
+}
+
+.modal_head{
+    height: 676px;
+    left: 0px;
+    top: -1px;
+    
+    background: #FFFEF6;
+}
+
+.modal_navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 89px;
+    margin-right: 76px;
+    padding-top: 4%;
+}
+
+.modal_navMenulist{
+    display: flex;
+    gap: 55px;
+    font-weight: 700;
+}
+
+.modal_login{
+    width: 160px;
+    height: 40px;
+    left: 1204px;
+    top: 57px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    
+    background: #FFDA3A;
+    border-radius: 8px;
+}
+
+.modal_login:hover{
+    background: #4687a3;
+    transform: scale(1.2);
+    transition: color, transform 500ms ease;
+    color: #ffffff;
+}
+
+.search_part{
+    margin-top: 4%;
+    text-align: left;
+    margin-left: 9%;
+    display: flex;
+    gap: 10%;
+}
+
+.contact_us{
+    width: 211px;
+    height: 49px;
+    left: 144px;
+    top: 267px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 49px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #2B2B2B;
+}
+
+.contact_txt{
+    width: 562px;
+    height: 40px;
+    margin-top: 1.5%;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 125% */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #6F737C;
+}
+  
+.modal_name {
+    display: flex;
+    gap: 2.5%;
+    margin-top: 5%;
+}
+
+.name_input{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 340px;
+    height: 21px;
+    background: none;
+}
+
+.firstname_input{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 340px;
+    height: 21px;
+    background: none;
+}
+
+.modal_epost{
+    display: flex;
+    gap: 2.5%;
+    margin-top: 5%;
+}
+
+.e-post_input{
+
+    border: none;
+    border-bottom: 1px solid black;
+    width: 340px;
+    height: 21px;
+    background: none;
+}
+
+.phonenumber_input{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 340px;
+    height: 21px;
+    background: none;
+}
+
+.modal_message{
+    display: grid;
+    margin-top: 3%;
+
+}
+
+.modal_message label {
+    color: #B4B4B4;
+}
+
+.message_input{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 700px;
+    background: none;
+    padding-top: 7%;
+}
+
+.send_btn{
+    width: 160px;
+    height: 40px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6%;
+    float: right;
+    
+    background: #FFDA3A;
+    border-radius: 8px;
+}
+
+.send_btn:hover{
+    background: #4687a3;
+    transform: scale(1.2);
+    transition: color, transform 500ms ease;
+    color: #ffffff;
+}
+
+
+.adress{
+    width: 331px;
+    height: 78px;
+    display: flex;
+    gap: 3%;
+}
+
+.adress_head{
+    width: 69px;
+    height: 24px;
+    left: 1043px;
+    top: 270px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    
+    color: #2B2B2B;
+}
+
+.adresstxt{
+    width: 283px;
+    height: 36px;
+    margin-top: 2.5%;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #3B3B3B;
+}
+
+.phone_us{
+    width: 331px;
+    height: 78px;
+    display: flex;
+    gap: 3%;
+    margin-top: 4%;
+}
+
+.phone_head{
+    width: 69px;
+    height: 24px;
+    left: 1043px;
+    top: 270px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    
+    color: #2B2B2B;
+}
+
+.phonetxt{
+    width: 283px;
+    height: 18px;
+    margin-top: 3%;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #3B3B3B;
+}
+
+.dataicon{
+    width: 331px;
+    height: 78px;
+    display: flex;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+.clock_head{
+    width: 69px;
+    height: 24px;
+    left: 1043px;
+    top: 270px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    
+    color: #2B2B2B;
+}
+
+.clocktxt{
+    width: 283px;
+    height: 54px;
+    margin-top: 1%;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    
+    color: #3B3B3B;
+}
+
+.folja{
+    width: 85px;
+    height: 24px;
+    margin-left: 8%;
+    margin-top: 10%;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    
+    color: #2B2B2B;
+}
+
+.socialnetworks {
+    gap: 9%;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 5%;
+    font-size: 2rem;
+}
+
+.home:hover{
+    color: #FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.phone:hover{
+    color: #FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.clock:hover{
+    color: #FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.insta:hover{
+    color: #FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.tg:hover{
+    color:#FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.facebook:hover{
+    color: #FFDA3A;
+    transform: scale(1.5);
+    transition: color, transform 500ms ease;
+}
+
+.modalwrapp{
+    width: 100%;
+    height: 709px;
+    left: -1px;
+    top: 5269px;
+    margin-top: 120px;
+    
+    background: #FFFFFF;
+}
+
+.modalfragor{
+    height: 45px;
+    width: 316px;
+    margin-left: 40%;
+    padding-top: 7%;
+  
+    border-radius: nullpx;
+    font-family: 'Source Serif Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 45px;
+    /* identical to box height, or 100% */
+  
+    text-align: center;
+  
+    color: #333333;
+}
+
+.modalaccordion{
+    width: 773px;
+    margin-left: 20%;
+    margin-top: 7%;
+}
+
+
+.modalitem{
+    margin-bottom: 17px;
+    width: 844px;
+    min-height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #D0D3DB;
+    border-radius: 10px;
+}
+
+.modaltitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 6%;
+    cursor: pointer;
+    margin-top: 3%;
+    margin-bottom: 15px;
+}
+
+.title span{
+    font-size: 2rem;
+}
+
+.modalcontent{
+    color: #6F737C;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+    margin-left: 25px;
+    margin-right: 46px;
+  
+}
+  
+  
+  
+.modalcontent.show{
+    margin-top: 2%;
+    margin-bottom: 4%;
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5s cubic-bezier(0,1,0,1);
+  
+}
+
+
+
+.modalblack_part{
+
+    background: #333333;
+    color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 5%;
+    
+    height: 98px;
+  
+}
+  
+.modalblack_part p {
+    margin-top: 39px;
+}
+  
+.modalblacktxt{
+    display: flex;
+    gap: 81px;
+    margin-right: 92px;
+}

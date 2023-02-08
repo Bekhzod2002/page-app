@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from '../../../Images/Logo.png';
 import svg from '../../../Images/Polygon 3.svg';
 import {FaSistrix, } from 'react-icons/fa';
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import './header.css'
-import Search from "../../searchwindow/search";
-
+import Modal from "../searchwindow/search";
 const Header = () => {
-
-
+    const [modalActive, setModalActive] = useState(false)
     return(
         
         <header>
@@ -27,26 +24,14 @@ const Header = () => {
                             <a>Sökguide</a>
                             <a>Kontakt oss</a>
 
-                                
-                            <button className="search_btn" ><FaSistrix/> Sökmotor   </button>
+                            <button className="search_btn" onClick={() => setModalActive(true)}><FaSistrix/> Sökmotor   </button>
                         
 
                         </ul>
 
-
-                        <AiOutlineMenu className="mobile_btn"/>
+                    <Modal active={modalActive} setActive={setModalActive}/>
 
                     </div>
-
-
-
- 
-
-         
-
-
-
-
                     
                     <div className="Head_landing">
                         <div className="comments">
@@ -56,13 +41,19 @@ const Header = () => {
                             <button className="demo_btn">Boka Demo</button>
                         </div>
                         <div className="landing_img">
-                            <img id="hexagon" src={svg}/>
+                            <img src={svg}/>
                         </div>
+
                     </div>
+
+
                 </div>
+
 
                 
             </div>
+
+
 
         </header>
         
