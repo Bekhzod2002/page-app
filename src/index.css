@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 0;
   
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -18,6 +17,7 @@ code {
 a{
   text-decoration: none;
   cursor: pointer;
+  color: #000000;
 }
 
 a:hover{
@@ -409,10 +409,6 @@ a:hover{
   background: #FFFEF6;
 }
 
-/* .opportunity {
-  padding-top: 70px;
-} */
-
 .opportunity_head{
   width: 629px;
   margin-left: 405px;
@@ -434,6 +430,7 @@ a:hover{
 .yourway{
   display: flex;
   margin-top: 5%;
+  margin-right: 10%;
 
 
 }
@@ -442,6 +439,7 @@ a:hover{
 
  .ellips_img1{
   height: 2%;
+  
   width: 15%;
   
 }
@@ -455,7 +453,7 @@ a:hover{
 .kolla_part{
   width: 20%;
   height: 20%;
-  margin-left: 2.5%;
+  margin-left: 2%;
 }
 
 .kolla_img {
@@ -466,6 +464,8 @@ a:hover{
   background: #FFDA3A;
   border-radius: 15px 15px 15px 0px;
 }
+
+
 
 .kolla{
   width: 195px;
@@ -556,7 +556,7 @@ a:hover{
   height: 100px;
   background: #FFDA3A;
   padding-top: 7%;
-  margin-left: 30%;
+  margin-left: 20%;
   border-radius: 15px 15px 15px 0px;
 }
 
@@ -564,7 +564,7 @@ a:hover{
   width: 171px;
   height: 24px;
   margin-top: 7%;
-  margin-left: 20%;
+  margin-left: 10%;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 600;
@@ -580,7 +580,6 @@ a:hover{
 }
 
 .under_txt{
-  width: 318px;
   height: 120px;
   margin-top: 2%; 
   font-family: 'Roboto';

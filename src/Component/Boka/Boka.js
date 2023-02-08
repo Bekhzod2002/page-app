@@ -3,7 +3,9 @@ import React from "react";
 const Boka = () => {
     return(
         <div>
-            Boka
+            
+            Boka Page
+
         </div>
     )
 }

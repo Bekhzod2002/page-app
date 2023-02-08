@@ -4,13 +4,19 @@ import svg from '../../../Images/Polygon 3.svg';
 import {FaSistrix, } from 'react-icons/fa';
 import './header.css'
 import Modal from "../searchwindow/search";
+import Boka from "../../Boka/Boka";
+import { Link, Route, Routes } from "react-router-dom";
+
+
 const Header = () => {
     const [modalActive, setModalActive] = useState(false)
+    
     return(
-        
-        <header>
-           
-            <div className="container">
+
+        <>
+            <header>
+            
+            <div>
 
                 <div className="flexSB">
                     <div className="navbar">
@@ -32,13 +38,12 @@ const Header = () => {
                     <Modal active={modalActive} setActive={setModalActive}/>
 
                     </div>
-                    
                     <div className="Head_landing">
                         <div className="comments">
                             <p className="main_comment">Över 50.000 protokoll från Sveriges kommuner samlade <br/> i en enda sökbar databas!</p>
                             <p className="second_comment">Ta reda på hur andra kommuner gjort i liknande frågor som de du själv sitter med!</p>
 
-                            <button className="demo_btn">Boka Demo</button>
+                            <Link to="/Boka" className="demo_btn"  ><span>Boka Demo</span></Link>
                         </div>
                         <div className="landing_img">
                             <img src={svg}/>
@@ -55,7 +60,12 @@ const Header = () => {
 
 
 
-        </header>
+            </header>
+
+            <Routes>
+                <Route path="/Boka" element={<Boka/>}/>
+            </Routes>
+        </>
         
     )
 }

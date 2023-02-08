@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {FaPhoneAlt, FaHome, FaRegClock, FaInstagram, FaTelegram, FaFacebookSquare} from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 import './search.css';
 import Logo from '../../../Images/Logo.png';
 
@@ -55,9 +56,13 @@ const Modal = ({active, setActive, children}) => {
                             <div className='modal_message'>
                                 <label>Meddelande</label>
                                 <input className='message_input' type={Text}></input>
+
+                                
                             </div>
 
-                            <button className='send_btn'>Skicka In</button>
+
+
+
                         </div>
 
                         <div>
