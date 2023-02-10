@@ -949,7 +949,7 @@ a:hover{
 
 .black_part{
   background: #333333;
-  color: #ffffff;
+  color: #FFFFFF;
   justify-content: space-between;
   display: flex;
   padding-left: 5%;
@@ -960,6 +960,7 @@ a:hover{
 
 .black_part p {
   margin-top: 39px;
+  color: #FFFFFF;
 }
 
 .blacktxt{
