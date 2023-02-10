@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {FaPhoneAlt, FaHome, FaRegClock, FaInstagram, FaTelegram, FaFacebookSquare} from 'react-icons/fa';
-import {Link} from 'react-router-dom';
 import './search.css';
 import Logo from '../../../Images/Logo.png';
 

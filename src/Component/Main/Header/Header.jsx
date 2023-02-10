@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import CountUp from 'react-countup'
 import Logo from '../../../Images/Logo.png';
 import svg from '../../../Images/Polygon 3.svg';
 import {FaSistrix, } from 'react-icons/fa';
 import './header.css'
 import Modal from "../searchwindow/search";
-import Boka from "../../Boka/Boka";
-import { Link, Route, Routes } from "react-router-dom";
+import Boka from "../../About/About";
+import {Link, Navigate, Route, Routes } from "react-router-dom";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import AOS from "aos";
 
 
 const Header = () => {
     const [modalActive, setModalActive] = useState(false)
+    const [viewPortEntered, setViewPortEntered] = useState(false);
+	useEffect(() => {
+		AOS.init({ duration: 2000 });
+	}, []);
+
+
+
     
     return(
 
@@ -26,30 +36,20 @@ const Header = () => {
                         
 
                         <ul className="navMenulist">
-                            <a>Hem</a>
-                            <a>Sökguide</a>
-                            <a>Kontakt oss</a>
+                            <Link to={"/"}>Hem</Link>
+                            <Link to={"/Boka"}>Sökguide</Link>
+                            <Link to={"/Avlop"}>Kontakt oss</Link>     
+                        <button className="search_btn" onClick={() => setModalActive(true)}><FaSistrix/> Sökmotor   </button>
 
-                            <button className="search_btn" onClick={() => setModalActive(true)}><FaSistrix/> Sökmotor   </button>
-                        
 
                         </ul>
+
+
 
                     <Modal active={modalActive} setActive={setModalActive}/>
 
                     </div>
-                    <div className="Head_landing">
-                        <div className="comments">
-                            <p className="main_comment">Över 50.000 protokoll från Sveriges kommuner samlade <br/> i en enda sökbar databas!</p>
-                            <p className="second_comment">Ta reda på hur andra kommuner gjort i liknande frågor som de du själv sitter med!</p>
 
-                            <Link to="/Boka" className="demo_btn"  ><span>Boka Demo</span></Link>
-                        </div>
-                        <div className="landing_img">
-                            <img src={svg}/>
-                        </div>
-
-                    </div>
 
 
                 </div>
@@ -65,6 +65,7 @@ const Header = () => {
             <Routes>
                 <Route path="/Boka" element={<Boka/>}/>
             </Routes>
+
         </>
         
     )

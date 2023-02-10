@@ -1,14 +1,32 @@
-import Foot from "./Component/Main/footer/footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./Component/About/About";
+import React from "react";
+import Avlop from "./Component/Avlop/Avlop";
+import Main from "./Component/Main/Main";
 import Header from "./Component/Main/Header/Header";
-import Home from "./Component/Main/MainPart/Home";
+
+
 
 function App() {
+
+
   return (
+
     <>
-  
-      <Header/>
-      <Home/>
-      <Foot/>
+    <BrowserRouter>
+    <Header/>
+
+
+            <Routes>
+          
+
+            <Route path="/" element={<Main/>}/>
+            <Route path="/About" element={<About/>}/>
+            <Route path="/Avlop" element={<Avlop/>}/>
+          </Routes>
+
+    </BrowserRouter>
+
             
     </>
   );
