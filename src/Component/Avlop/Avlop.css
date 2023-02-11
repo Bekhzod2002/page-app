@@ -16,6 +16,7 @@ hr{
     display: flex;
     align-items: center;
     margin:auto;
+    
 }
 
 .search_box_input{
@@ -285,6 +286,13 @@ p {
     display: flex;
     align-items: center;
     gap: 10px;
+
+}
+
+.book:hover{
+    transform: scale(0.7);
+    transition: color, transform 500ms ease;
+    
 }
 
 .download {
@@ -296,3 +304,40 @@ p {
     gap: 10px;
     border: none;
 }
+
+.download:hover{
+    transform: scale(1.4);
+    transition: color, transform 500ms ease;
+    background: #2eb680;
+    color: #FFFFFF;
+}
+
+/* 
+@media (max-width: 400px) {
+    .Background{
+        background-color: #fffef6;
+        overflow: hidden;
+    }
+
+    .search {
+        padding: 3% 8%;
+    }
+
+    .remove_start {
+        display: none !important;
+    }
+    .search_card_mobile {
+        display: block;
+    }
+
+    .search_box {
+        
+			width: 80%;
+			border-bottom: 0.5px solid #555555;
+			display: flex;
+			align-items: center;
+
+			margin: auto;
+    }
+
+} */

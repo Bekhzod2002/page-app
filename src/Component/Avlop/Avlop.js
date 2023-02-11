@@ -1,7 +1,4 @@
-import React,{Fragment, useState, useEffect} from "react";
-import CountUp from 'react-countup'
-import ReactVisibilitySensor from "react-visibility-sensor";
-import AOS from "aos";
+import React, { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import search from '../../Images/search.png';
 import Filterimg from '../../Images/Filterimg.png';
@@ -19,11 +16,98 @@ import Digital from '../../Images/Digital.png';
 import './Avlop.css'
 import Footer from "../Main/footer/footer";
 
+
+
 const Avlop = () => {
-    const [viewPortEntered, setViewPortEntered] = useState(false);
-	useEffect(() => {
-		AOS.init({ duration: 2000 });
-	}, []);
+
+    
+  const data = {
+  
+  
+    CardData:[
+                  {
+                      id: 1,
+                      img: Company_img,
+                      title: 'Krav på enskilda avlopp', 
+                      clock: clock_img,
+                      clocktitle: '2022-02-21',
+                      Home: home, 
+                      hometitle: 'Västra götaland',
+                      place: ep_place,
+                      placetitle: 'Göteborg', 
+                      Lawimg: law, 
+                      lawtitle: 'Tingsrätt', 
+                      text: 'Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.', 
+                      pdf: Pdf,
+                      pdftitle: '14mb', 
+                      word: Word, 
+                      wordtitle: '14 Sidor', 
+                      buk: book, 
+                      buktitle: 'Öppna', 
+                      download: download, 
+                      downloadtitle: 'Ladda Ner'
+                  },
+                  {
+                      id: 2,
+                      img: Company_img,
+                      title: 'Krav på enskilda avlopp', 
+                      clock: clock_img,
+                      clocktitle: '2022-02-21',
+                      home: home, 
+                      hometitle: 'Västra götaland',
+                      place: ep_place,
+                      placetitle: 'Göteborg', 
+                      law: law, 
+                      lawtitle: 'Tingsrätt', 
+                      text: 'Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.', 
+                      pdf: Pdf,
+                      pdftitle: '14mb', 
+                      word: Word, 
+                      wordtitle: '14 Sidor', 
+                      buk: book, 
+                      buktitle: 'Öppna', 
+                      download: download, 
+                      downloadtitle: 'Ladda Ner'
+                  },
+                  {
+                      id: 3,
+                      img: Company_img,
+                      title: 'Krav på enskilda avlopp', 
+                      clock: clock_img,
+                      clocktitle: '2022-02-21',
+                      home: home, 
+                      hometitle: 'Västra götaland',
+                      place: ep_place,
+                      placetitle: 'Göteborg', 
+                      law: law, 
+                      lawtitle: 'Tingsrätt', 
+                      text: 'Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.', 
+                      pdf: Pdf,
+                      pdftitle: '14mb', 
+                      word: Word, 
+                      wordtitle: '14 Sidor', 
+                      buk: book, 
+                      buktitle: 'Öppna', 
+                      download: download, 
+                      downloadtitle: 'Ladda Ner'
+                  }
+              ]
+          
+          }
+    
+    const [filter, setFilter] = useState('');
+    
+    const searchText = (event) => {
+        setFilter(event.target.value);
+    }
+
+    let dataSearch = data.CardData.filter(item => {
+        return Object.keys(item).some(key=> 
+            item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+            )
+        })
+
+
 
     return(
         <div className="Background">
@@ -34,7 +118,7 @@ const Avlop = () => {
 
                 <div className="search_box">
 					<img src={search} alt="search" />
-					<input id="Search" name="Search" className="search_box_input" type="search" placeholder="Search" />
+					<input id="Search" name="Search" className="search_box_input" type="search" placeholder="Search" value={filter} onChange={searchText.bind(this)} />
 					<button className="search_box_button">SÖK</button>
 				</div>
 
@@ -81,6 +165,8 @@ const Avlop = () => {
 						</Dropdown.Menu>
 					</Dropdown>
 				</div>
+
+                
                 <div className="search_card_mobile">
 					<div className="fullinfo">
 					
@@ -102,7 +188,7 @@ const Avlop = () => {
 							</div>
 						</div>
 							<div className="cardInfo">
-							<div className="cardTitle">Krav på enskilda avlopp</div>
+							<div className="cardTitle">Krav på enskilda avlopp for search</div>
 						</div>
 						<div className="describ">
 							Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller
@@ -123,183 +209,72 @@ const Avlop = () => {
 						</div>
 					</div>
 				</div>
-                <div className="search_card">
-					<div className="cardImg">
-						<img src={Company_img} alt="cardImg" />
-					</div>
-					<div className="fullInfo">
-						<div className="cardInfo">
-							<div className="cardTitle">Krav på enskilda avlopp</div>
-							<div className="saved">
-								<p>Spara</p>
-								<img className="save"  alt="save" />
-							</div>
-						</div>
-						<div className="natification">
-							<div className="set">
-								<img src={clock_img} alt="clock" />
-								<span className="end">2022-02-21</span>
-							</div>
-							<div className="set">
-								<img src={home} alt="clock" />
-								<span className="end">Västra götaland</span>
-							</div>
-							<div className="set">
-								<img src={ep_place} alt="clock" />
-								<span className="end">Göteborg</span>
-							</div>
-							<div className="set">
-								<img src={law} alt="clock" />
-								<span className="end">Tingsrätt</span>
-							</div>
-						</div>
-						<div className="describ">
-							Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller
-							miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.
-						</div>
-						<div className="allPdf">
-							<div className="pdfLeft">
-								<div className="get">
-									<img src={Pdf} alt="pdf" />
-									12 Mb
-								</div>
-								<div className="get">
-									<img src={Word} alt="word" />
-									14 Sidor
-								</div>
-							</div>
-							<div className="pdfRight">
-								<button className="book">
-									Öppna
-									<img src={book} alt="book" />
-								</button>
-								<button className="download">
-									Ladda Ner
-									<img src={download} alt="download" />
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="search_card">
-					<div className="cardImg">
-						<img src={Company_img} alt="cardImg" />
-					</div>
-					<div className="fullInfo">
-						<div className="cardInfo">
-							<div className="cardTitle">Krav på enskilda avlopp</div>
-							<div className="saved">
-								<p>Spara</p>
-								<img className="save"  alt="save" />
-							</div>
-						</div>
-						<div className="natification">
-							<div className="set">
-								<img src={clock_img} alt="clock" />
-								<span className="end">2022-02-21</span>
-							</div>
-							<div className="set">
-								<img src={home} alt="clock" />
-								<span className="end">Västra götaland</span>
-							</div>
-							<div className="set">
-								<img src={ep_place} alt="clock" />
-								<span className="end">Göteborg</span>
-							</div>
-							<div className="set">
-								<img src={law} alt="clock" />
-								<span className="end">Tingsrätt</span>
-							</div>
-						</div>
-						<div className="describ">
-							Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller
-							miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.
-						</div>
-						<div className="allPdf">
-							<div className="pdfLeft">
-								<div className="get ">
-									<img src={Pdf} alt="pdf" />
-									12 Mb
-								</div>
-								<div className="get  ">
-									<img src={Word} alt="word" />
-									14 Sidor
-								</div>
-							</div>
-							<div className="pdfRight">
-								<button className="book">
-									Öppna
-									<img src={book} alt="book" />
-								</button>
-								<button className="download">
-									Ladda Ner
-									<img src={download} alt="download" />
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="search_card">
-					<div className="cardImg">
-						<img src={Company_img} alt="cardImg" />
-					</div>
-					<div className="fullInfo">
-						<div className="cardInfo">
-							<div className="cardTitle">Krav på enskilda avlopp</div>
-							<div className="saved">
-								<p>Spara</p>
-								<img className="save"  alt="save" />
-							</div>
-						</div>
-						<div className="natification">
-							<div className="set">
-								<img src={clock_img} alt="clock" />
-								<span className="end">2022-02-21</span>
-							</div>
-							<div className="set">
-								<img src={home} alt="clock" />
-								<span className="end">Västra götaland</span>
-							</div>
-							<div className="set">
-								<img src={ep_place} alt="clock" />
-								<span className="end">Göteborg</span>
-							</div>
-							<div className="set">
-								<img src={law} alt="clock" />
-								<span className="end">Tingsrätt</span>
-							</div>
-						</div>
-						<div className="describ">
-							Det är du som rår över din avloppsrening som ansvarar för att utsläppet inte orsakar olägenhet för varken människors hälsa eller
-							miljön. Myndighetens krav ska anpassas utifrån de risker ditt avloppsutsläpp kan innebära. Varje ärende ska prövas var för sig.
-						</div>
-						<div className="allPdf">
-							<div className="pdfLeft">
-								<div className="get">
-									<img src={Pdf} alt="pdf" />
-									12 Mb
-								</div>
-								<div className="get">
-									<img src={Word} alt="word" />
-									14 Sidor
-								</div>
-							</div>
-							<div className="pdfRight">
-								<button className="book">
-									Öppna
-									<img src={book} alt="book" />
-								</button>
-								<button className="download">
-									Ladda Ner
-									<img src={download} alt="download" />
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
+                    {dataSearch.map((item, index) => {
+                        return(
+                            <div className="search_card">
+					<div className="cardImg">
+						<img src={item.img} alt="cardImg" />
+					</div>
+					<div className="fullInfo">
+						<div className="cardInfo">
+							<div className="cardTitle">{item.title}</div>
+{/* 							<div className="saved">
+								<p>Spara</p>
+								<img className="save"  alt="save" />
+							</div> */}
+						</div>
+						<div className="natification">
+							<div className="set">
+								<img src={item.clock} alt="clock" />
+								<span className="end">{item.clocktitle}</span>
+							</div>
+							<div className="set">
+								<img src={item.Home} alt="clock" />
+								<span className="end">{item.hometitle}</span>
+							</div>
+							<div className="set">
+								<img src={item.place} alt="clock" />
+								<span className="end">{item.placetitle}</span>
+							</div>
+							<div className="set">
+								<img src={item.Lawimg} alt="clock" />
+								<span className="end">{item.lawtitle}</span>
+							</div>
+						</div>
+						<div className="describ">{item.text}</div>
+						<div className="allPdf">
+							<div className="pdfLeft">
+								<div className="get">
+									<img src={item.pdf} alt="pdf" />
+									{item.pdftitle}
+								</div>
+								<div className="get">
+									<img src={item.word} alt="word" />
+									{item.wordtitle}
+								</div>
+							</div>
+							<div className="pdfRight">
+								<button className="book">
+									{item.buktitle}
+									<img src={item.buk} alt="book" />
+								</button>
+								<button className="download">
+									{item.downloadtitle}
+									<img src={item.download} alt="download" />
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+                        )
+                    })}
                 
+
+                 
             </div>
+
+
             <div className="let_downpart">
         <div className="letdowns">
             <div className="benefits_txt">
@@ -322,82 +297,20 @@ const Avlop = () => {
                 </p> 
                 <div className="protocols" >
                     <ul>
-                        <i className="numbers">+
-                            <Fragment>
-                                <strong data-number="50000">
-                                    <CountUp start={viewPortEntered ? null : 0} end={50000}>
-                                        {({ countUpRef }) => {
-                                            return (
-                                                <ReactVisibilitySensor
-                                                    active={!viewPortEntered}
-                                                    onChange={isVisible => {
-                                                        if (isVisible) {
-                                                            setViewPortEntered(true);
-                                                        }
-                                                    }}
-                                                    delayedCall>
-                                                        
-                                                    <span className="number" ref={countUpRef}></span>
-                                                </ReactVisibilitySensor>
-                                            );
-                                        }}
-                                    </CountUp>
-                                </strong>
-                            </Fragment>
+                        <i className="numbers">+50000
                         </i>
                         <p className="numb_txt">Protokoll i samma plats</p>
                     </ul>
                     <hr/>
                     <ul>
-                        <i className="numbers">+
-                            <Fragment>
-                                <strong data-number="30000">
-                                    <CountUp start={viewPortEntered ? null : 0} end={30000}>
-                                        {({ countUpRef }) => {
-                                            return (
-                                                <ReactVisibilitySensor
-                                                    active={!viewPortEntered}
-                                                    onChange={isVisible => {
-                                                        if (isVisible) {
-                                                            setViewPortEntered(true);
-                                                        }
-                                                    }}
-                                                    delayedCall>
-                                                        
-                                                    <span className="number" ref={countUpRef}></span>
-                                                </ReactVisibilitySensor>
-                                            );
-                                        }}
-                                    </CountUp>
-                                </strong>
-                            </Fragment>
+                        <i className="numbers">+30000
                         </i>
                         <p className="numb_txt">Ned laddade protokoll</p>
                     </ul>
                     <hr/>
                     <ul>
-                        <i className="numbers">+
-                            <Fragment>
-                                <strong data-number="10000">
-                                    <CountUp start={viewPortEntered ? null : 0} end={10000}>
-                                        {({ countUpRef }) => {
-                                            return (
-                                                <ReactVisibilitySensor
-                                                    active={!viewPortEntered}
-                                                    onChange={isVisible => {
-                                                        if (isVisible) {
-                                                            setViewPortEntered(true);
-                                                        }
-                                                    }}
-                                                    delayedCall>
-                                                        
-                                                    <span className="number" ref={countUpRef}></span>
-                                                </ReactVisibilitySensor>
-                                            );
-                                        }}
-                                    </CountUp>
-                                </strong>
-                            </Fragment>
+                        <i className="numbers">+10000
+
                         </i>
                         <p className="numb_txt">Sparade timmar</p>
                     </ul>
@@ -468,5 +381,6 @@ const Avlop = () => {
         </div>
     )
 }
+
 
 export default Avlop;
